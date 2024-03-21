@@ -2,7 +2,6 @@
     // Functie: programma login OOP 
     // Auteur: Diego Ballestero
 
-
     // Initialisatie
 ?>
 

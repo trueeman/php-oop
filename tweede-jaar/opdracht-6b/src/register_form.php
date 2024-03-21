@@ -9,9 +9,7 @@ require_once "../vendor/autoload.php";
 use Opdracht6b\classes\User;
 
 // Is de register button aangeklikt?
-if(isset($_POST['register-btn'])){
-
-
+if(isset($_POST['register-btn'])) {
 	$user = new User();
 	$errors = [];
 

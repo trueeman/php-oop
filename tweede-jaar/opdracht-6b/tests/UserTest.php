@@ -12,7 +12,9 @@ use PHPUnit\Framework\TestCase;
 class UserTest extends TestCase {
     private $username;
     private $db;
+    private $password;
 
+    
     public function testRegisterUser(): void {
         // Testing a registrated user.
         $this -> assertTrue($this -> user -> registerUser('Diego', 'Ballestero'));

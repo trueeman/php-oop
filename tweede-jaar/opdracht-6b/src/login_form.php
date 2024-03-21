@@ -11,8 +11,6 @@
 
 	// Is de login button aangeklikt?
 	if(isset($_POST['login-btn']) ) {
-
-
 		$user = new User();
 
 		$user->username = $_POST['username'];

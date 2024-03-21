@@ -11,11 +11,12 @@ use PDO;
 use PDOException;
 
 
-session_start();
+
 
 class User {
     private $db;
     private $username; 
+    private $password;
 
     public function __construct() {
         try {
@@ -76,7 +77,7 @@ class User {
         }
     }
     
-    public function GetUser() {
+    public function GetUser($username) {
         if (!$this -> IsLoggedin()) {
             return false;
         }
@@ -100,6 +101,32 @@ class User {
         
         return true;
     }
+
+
+    // public function GetPassword($password ) {
+    //     if (!$this -> IsLoggedin()) {
+    //         return false;
+    //     }
+    
+    //     $query = "SELECT password FROM users WHERE password = ?";
+    //     $stmt = $this -> db -> prepare($query);
+    //     $params = array($_SESSION['password']);
+        
+    //     try {
+    //         $stmt -> execute($params);
+    //         $user = $stmt -> fetch(PDO::FETCH_ASSOC);
+    
+    //         if ($user) {
+    //             $this -> password = $user['password'];
+    //         } else {
+    //             return false;
+    //         }
+    //     } catch (PDOException $e) {
+    //         return false;
+    //     }
+        
+    //     return true;
+    // }
     
     public function IsLoggedin() {
         return isset($_SESSION['username']);
@@ -127,3 +154,9 @@ class User {
 }
 
 ?>
+
+
+
+
+
+
