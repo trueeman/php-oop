@@ -43,6 +43,20 @@ class User {
         }
     }
 
+    function ValidateUser() {
+        $errors = [];
+
+        if (empty($this -> username)) {
+            array_push($errors, "Invalid username");
+        } else if (empty($this -> password)) {
+            array_push($errors, "Invalid password");
+        }
+
+        // Test username > 3 tekens en < 50 tekens
+        
+        return $errors;
+    }
+
     public function loginUser($username, $password) {
         $sql = "SELECT password, role FROM users WHERE username = :username";
         $stmt = $this -> db -> prepare($sql);
